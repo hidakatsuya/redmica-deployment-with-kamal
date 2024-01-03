@@ -1,0 +1,3 @@
+/.env
+/config/deploy.yml
+/Gemfile.lock

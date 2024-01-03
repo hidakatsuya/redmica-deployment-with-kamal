@@ -1,0 +1,30 @@
+# Name of your application. Used to uniquely configure containers.
+service: service-name
+
+# Name of the container image.
+image: your-username/image-name
+
+# Deploy to these servers.
+servers:
+  - your-server-ipaddress
+
+# Credentials for your image host.
+registry:
+  username: your-registry-username
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+env:
+  clear:
+    REDMINE_PLUGINS_MIGRATE: 1
+  secret:
+    - REDMINE_DB_MYSQL # or REDMINE_DB_POSTGRES
+    - REDMINE_DB_USERNAME
+    - REDMINE_DB_PASSWORD
+
+ssh:
+  user: ubuntu
+
+healthcheck:
+  path: /login
+  port: 3000
